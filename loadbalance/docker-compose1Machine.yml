@@ -34,7 +34,7 @@ services:
   jws-db1:
     build: .
     image: cxn/jws
-    command: sleep 10000 #/opt/chemaxon/jws/jws-db/run-jws-db
+    command: /opt/chemaxon/jws/jws-db/run-jws-db
     environment: 
       - "EUREKA_URI=http://jws-discovery:8761/"
       - "CONFIG_SERVER_URI=http://jws-config:8888/" 
@@ -46,7 +46,7 @@ services:
   jws-db2:
     build: .
     image: cxn/jws
-    command: sleep 10000 #/opt/chemaxon/jws/jws-db/run-jws-db
+    command: /opt/chemaxon/jws/jws-db/run-jws-db
     environment: 
       - "EUREKA_URI=http://jws-discovery:8761/"
       - "CONFIG_SERVER_URI=http://jws-config:8888/" 
