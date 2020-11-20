@@ -127,7 +127,7 @@
            </discovery-strategies>
         </join>
         <interfaces enabled="true">
-            <interface>10.0.*.*</interface>
+            <interface>10.0.1-255.*</interface>
         </interfaces>
         <ssl enabled="false"/>
         <socket-interceptor enabled="false"/>
