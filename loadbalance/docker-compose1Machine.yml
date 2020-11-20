@@ -31,7 +31,7 @@ services:
 # To monitor discovery service for tesing purposes uncomment:
     ports:
      - "8761:8761"
-  jws-db1:
+  jws-db:
     build: .
     image: cxn/jws
     command: /opt/chemaxon/jws/jws-db/run-jws-db
@@ -39,22 +39,10 @@ services:
       - "EUREKA_URI=http://jws-discovery:8761/"
       - "CONFIG_SERVER_URI=http://jws-config:8888/" 
     ports:
-      - "8061:8062"
-    #deploy:
-        #mode: replicated
-        #replicas: 2
-  jws-db2:
-    build: .
-    image: cxn/jws
-    command: /opt/chemaxon/jws/jws-db/run-jws-db
-    environment: 
-      - "EUREKA_URI=http://jws-discovery:8761/"
-      - "CONFIG_SERVER_URI=http://jws-config:8888/" 
-    ports:
-      - "8062:8062"
-    #deploy:
-        #mode: replicated
-        #replicas: 2
+      - "8061-8062:8062"
+    deploy:
+        mode: replicated
+        replicas: 2
   jws-gateway:
     build: .
     image: cxn/jws
