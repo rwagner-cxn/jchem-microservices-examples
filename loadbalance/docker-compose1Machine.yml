@@ -53,10 +53,10 @@ services:
     ports:
       - "8080:8080"
     restart: unless-stopped
-  #postgres:
-    #image: postgres:11.4
-    #environment:
-      #- "POSTGRES_PASSWORD=chemaxon"
-      #- "POSTGRES_USER=chemaxon"
-      #- "POSTGRES_DB=zetor"
-      #- "PGDATA=/var/lib/postgresql/data/pgdata_zetor"
+  postgres:
+    image: postgres:11.4
+    environment:
+      - "POSTGRES_PASSWORD=chemaxon"
+      - "POSTGRES_USER=chemaxon"
+      - "POSTGRES_DB=zetor"
+      - "PGDATA=/var/lib/postgresql/data/pgdata_zetor"
